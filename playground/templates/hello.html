@@ -11,10 +11,19 @@
     {% else %}
     <h1>HI DUDE</h1>
     {% endif %}
+    
+    {{ result }}
+    
     <ul>
         {% for product in products %}
-        <li>{{ product.title }}</li>
-        {% endfor %}
+        {% comment %} <li>{{ product.title }}</li> {% endcomment %}
+        {% comment %} <li>{{ product }}</li> {% endcomment %}
+        {% comment %} <li>{{ product.customer__first_name }} - {{ product.product__title }}</li> {% endcomment %}
+        {% comment %} <li>{{ product.customer.first_name }}</li> {% endcomment %}
+        <li> {{ product.id }} - {{ product.customer.first_name }} - {{ product.customer_id }} </li>
+
+        {% endfor %}        
     </ul>
+
 </body>
 </html>
