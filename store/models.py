@@ -71,6 +71,9 @@ class Order(models.Model):
     payment_status = models.CharField(max_length=1,choices=PAYMENT_STATUS_CHOICES,default=PAYMENT_STATUS_PENDING)
     customer = models.ForeignKey(Customer,on_delete=models.PROTECT)
 
+    def __str__(self) -> str:
+        return str(self.id)
+
 
 class Address(models.Model):
     street = models.CharField(max_length=255)
